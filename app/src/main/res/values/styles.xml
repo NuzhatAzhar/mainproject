@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">#33fcfeff</item>
+        <item name="colorPrimaryDark">#ddeff27a</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="border">
+        <item name="android:borderlessButtonStyle">@color/colorPrimary</item>
+    </style>
+
+    <style name="text_layout" parent="Widget.Design.TextInputLayout">
+        <item name="android:textSize">18sp</item>
+
+    </style>
+</resources>
