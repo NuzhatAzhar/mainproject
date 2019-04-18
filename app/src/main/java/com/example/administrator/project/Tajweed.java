@@ -43,11 +43,19 @@ public class Tajweed extends Fragment {
 
         btn_tajweed=view.findViewById(R.id.btn_tajwed);
 
+
         btn_tfseer=view.findViewById(R.id.btn_taser);
        btn_tajweed.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                Intent intent = new Intent(getContext(), TajweedCourse.class);
+               startActivity(intent);
+           }
+       });
+       btn_tfseer.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(getContext(),Tafseercourse.class);
                startActivity(intent);
            }
        });

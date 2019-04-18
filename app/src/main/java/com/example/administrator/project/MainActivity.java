@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 img.setVisibility(View.VISIBLE);
 
                 startActivity(new Intent(MainActivity.this,Main2Activity.class));
+                finish();
+
             }
         };
 

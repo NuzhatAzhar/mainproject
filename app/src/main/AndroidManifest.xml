@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrator.project">
+    package="com.example.administrator.project"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +31,9 @@
         <activity android:name=".para3" />
         <activity android:name=".para4" />
         <activity android:name=".BaseActivity" />
-        <activity android:name=".TajweedCourse"></activity>
+        <activity android:name=".TajweedCourse" />
+        <activity android:name=".Tafseercourse" />
+        <activity android:name=".CourseRegistrerd"></activity>
     </application>
 
 </manifest>

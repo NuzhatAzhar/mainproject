@@ -7,4 +7,32 @@
     tools:context=".TajweedCourse"
     android:background="@drawable/advancecourse">
 
+    <Button
+        android:id="@+id/link1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="54dp"
+        android:background="@color/transparent"
+        android:fontFamily="sans-serif"
+        android:onClick="facebookpage"
+        android:text="  https://www.facebook.com/madarsaalfurqan"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="10sp" />
+
+    <Button
+        android:onClick="call2"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/link1"
+        android:layout_alignRight="@+id/link"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:layout_marginRight="26dp"
+        android:textAllCaps="false"
+        android:background="@color/transparent"
+        android:text="Contact US" />
+
 </RelativeLayout>

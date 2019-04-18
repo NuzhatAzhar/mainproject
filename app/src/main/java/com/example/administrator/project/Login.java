@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         init();
         if (user != null) {
-            startActivity(new Intent(Login.this,Main2Activity.class));
+            startActivity(new Intent(Login.this,Course_list.class));
         }
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +69,7 @@ public class Login extends AppCompatActivity {
       login_btn=findViewById(R.id.login_btn);
       database=FirebaseDatabase.getInstance();
       reference=database.getReference("Current Student");
-
-
+      user=auth.getCurrentUser();
     }
 
     public void signin(View view) {

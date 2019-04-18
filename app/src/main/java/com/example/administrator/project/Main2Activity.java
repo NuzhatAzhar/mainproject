@@ -1,21 +1,16 @@
 package com.example.administrator.project;
 
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -25,13 +20,20 @@ public class Main2Activity extends AppCompatActivity {
     FragmentAdapter adapter;
     ArrayList<android.support.v4.app.Fragment> list;
     TabLayout tabs;
-Button btn1;
+    Button btn1;
+    FirebaseAuth auth;
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
         init();
+
+        /*if(user!=null){
+            startActivity(new Intent(Main2Activity.this,Course_list.class));
+        }*/
         list.add(new Tajweed());
         list.add(new Learn());
         list.add(new New_Events());
@@ -59,12 +61,12 @@ Button btn1;
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder =new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("warning");
         builder.setIcon(R.mipmap.ic_launcher_round);
         builder.setMessage("Are you sure you want to exit");
         builder.setCancelable(false);
-        builder.setPositiveButton("yes",new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 System.exit(0);
@@ -72,7 +74,7 @@ Button btn1;
         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-           dialog.dismiss();
+                dialog.dismiss();
             }
         }).show();
 
@@ -80,11 +82,13 @@ Button btn1;
 
 
     private void init() {
-        pager=findViewById(R.id.view_pager);
-        list=new ArrayList<>();
-       adapter=new FragmentAdapter(getSupportFragmentManager(),list);
-        tabs=findViewById(R.id.tabs);
-        btn1=findViewById(R.id.btn_online1);
+        pager = findViewById(R.id.view_pager);
+        list = new ArrayList<>();
+        adapter = new FragmentAdapter(getSupportFragmentManager(), list);
+        tabs = findViewById(R.id.tabs);
+        btn1 = findViewById(R.id.btn_online1);
+        auth=FirebaseAuth.getInstance();
+        //user=auth.getCurrentUser();
 
     }
 

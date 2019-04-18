@@ -1,5 +1,6 @@
 package com.example.administrator.project;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -8,7 +9,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -16,7 +16,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,7 +29,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class BaseActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
-   ActionBarDrawerToggle toggle;
+    ActionBarDrawerToggle toggle;
     Toolbar toolbar;
     NavigationView navigationView;
     FragmentManager fragmentManager;
@@ -52,16 +51,16 @@ public class BaseActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_navigation_drawer);
 
-        NavigationView navigationView=findViewById(R.id.navigation_view);
-        View view= navigationView.getHeaderView(0);
-        username=view.findViewById(R.id.username);
-        email=view.findViewById(R.id.email_user);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        View view = navigationView.getHeaderView(0);
+        username = view.findViewById(R.id.username);
+        email = view.findViewById(R.id.email_user);
         //imageView=view.findViewById(R.id.header_image);
 
         init();
-        transaction=fragmentManager.beginTransaction();
-        transaction.replace(R.id.frag_container,new Home_Fragment());
-        transaction.commit();
+//        transaction=fragmentManager.beginTransaction();
+//        transaction.replace(R.id.frag_container,new Home_Fragment());
+//        transaction.commit();
 
         setUpDrawer();
         navigationView.setCheckedItem(R.id.nv_account);
@@ -92,8 +91,8 @@ public class BaseActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user=dataSnapshot.getValue(User.class);
-                Toast.makeText(BaseActivity.this,user.getUname(), Toast.LENGTH_SHORT).show();
+                User user = dataSnapshot.getValue(User.class);
+                Toast.makeText(BaseActivity.this, user.getUname(), Toast.LENGTH_SHORT).show();
                 username.setText(user.getUname());
                 email.setText(user.getEmail());
 
@@ -119,6 +118,7 @@ public class BaseActivity extends AppCompatActivity {
         transaction.commit();
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (toggle.onOptionsItemSelected(item)) {
@@ -129,14 +129,14 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
-    private void init() {
+    protected void init() {
         toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.navigation_view);
-        auth=FirebaseAuth.getInstance();
-        user=auth.getCurrentUser();
-        database=FirebaseDatabase.getInstance();
-        databaseReference=database.getReference("Current Student").child(user.getUid());
-        storage=FirebaseStorage.getInstance();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Current Student").child(user.getUid());
+        storage = FirebaseStorage.getInstance();
         drawerLayout = findViewById(R.id.drawer);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_navigation, R.string.close_navigation);
         fragmentManager = getSupportFragmentManager();

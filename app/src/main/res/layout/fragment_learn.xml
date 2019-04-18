@@ -18,37 +18,38 @@
         android:backgroundTint="#115f59"
         android:textColor="#ffff"
         android:textStyle="bold"
-        android:id="@+id/btn1"
+        android:id="@+id/para1"
         android:text="Juzz_1" />
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/para2"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/btn1"
+        android:layout_alignLeft="@+id/para1"
         android:layout_alignParentTop="true"
         android:layout_marginTop="234dp"
-        android:backgroundTint="#FF008577"
+        android:backgroundTint="#115f59"
         android:text="Juzz_2"
         android:textColor="#ffff"
         android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/para3"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/btn2"
-        android:layout_alignLeft="@+id/btn2"
+        android:layout_below="@+id/para2"
+        android:layout_alignLeft="@+id/para2"
         android:text="Juzz_3"
         android:backgroundTint="#115f59"
         android:textColor="#ffff"
         android:textStyle="bold"/>
 
     <Button
+        android:id="@+id/para4"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/btn3"
-        android:layout_alignLeft="@+id/btn1"
+        android:layout_below="@+id/para3"
+        android:layout_alignLeft="@+id/para1"
         android:text="Juz_4"
         android:backgroundTint="#115f59"
         android:textColor="#ffff"

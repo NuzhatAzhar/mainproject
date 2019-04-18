@@ -3,39 +3,22 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
-        <entry key="imageWizard">
+        <entry key="vectorWizard">
           <value>
             <PersistentState>
               <option name="children">
                 <map>
-                  <entry key="imageAssetPanel">
+                  <entry key="vectorAssetStep">
                     <value>
                       <PersistentState>
                         <option name="children">
                           <map>
-                            <entry key="launcherLegacy">
+                            <entry key="clipartAsset">
                               <value>
                                 <PersistentState>
-                                  <option name="children">
-                                    <map>
-                                      <entry key="image">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="paddingPercent" value="-10" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
-                                    </map>
-                                  </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
-                                      <entry key="backgroundColor" value="dfff7e" />
-                                      <entry key="imageAsset" value="E:\bbsydp\Project\app\src\main\res\drawable\finnaalq.png" />
+                                      <entry key="url" value="jar:file:/D:/Program%20Files/Android/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_zoom_out_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -45,7 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="ic_zoom_out" />
+                            <entry key="sourceFile" value="C:\Users\Administrator" />
                           </map>
                         </option>
                       </PersistentState>

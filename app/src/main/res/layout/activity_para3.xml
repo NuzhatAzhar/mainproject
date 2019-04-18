@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".para3">
 <android.support.v4.view.ViewPager
-    android:id="@+id/view_pager3"
+    android:id="@+id/viewpager3"
+    android:padding="15dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
