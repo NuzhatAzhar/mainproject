@@ -1,5 +1,7 @@
 package com.example.administrator.project;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,8 +10,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +38,7 @@ public class BaseActivity extends AppCompatActivity {
     NavigationView navigationView;
     FragmentManager fragmentManager;
     FragmentTransaction transaction;
+    FragmentTransaction transaction2;
     public static FrameLayout frameLayout;
 
     TextView username, email;
@@ -49,7 +54,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_navigation_drawer);
+        setContentView(R.layout.nav_drawer);
 
         NavigationView navigationView = findViewById(R.id.navigation_view);
         View view = navigationView.getHeaderView(0);
@@ -58,9 +63,9 @@ public class BaseActivity extends AppCompatActivity {
         //imageView=view.findViewById(R.id.header_image);
 
         init();
-//        transaction=fragmentManager.beginTransaction();
-//        transaction.replace(R.id.frag_container,new Home_Fragment());
-//        transaction.commit();
+        transaction=fragmentManager.beginTransaction();
+        transaction.replace(R.id.frag_container,new Home_Fragment());
+        transaction.commit();
 
         setUpDrawer();
         navigationView.setCheckedItem(R.id.nv_account);
@@ -79,7 +84,21 @@ public class BaseActivity extends AppCompatActivity {
                         showFragment(new Setting_Fragment1());
                         break;
                     case R.id.nv_logout:
-                        showFragment(new Logout_Fragment());
+                        AlertDialog.Builder builder =new AlertDialog.Builder(BaseActivity.this);
+                        builder.setTitle("Alert");
+                        builder.setMessage("Are you want to sure to logout?");
+                        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                           startActivity(new Intent(BaseActivity.this,Main2Activity.class));
+                           }
+                        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).show();
+
                         break;
                 }
                 drawerLayout.closeDrawer(Gravity.START);
@@ -92,8 +111,10 @@ public class BaseActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                Toast.makeText(BaseActivity.this, user.getUname(), Toast.LENGTH_SHORT).show();
-                username.setText(user.getUname());
+              Toast.makeText(BaseActivity.this, user.getUname(), Toast.LENGTH_SHORT).show();
+
+
+                username.setText(dataSnapshot.child("user").getValue().toString());
                 email.setText(user.getEmail());
 
             }
@@ -128,6 +149,10 @@ public class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(BaseActivity.this,Main2Activity.class));
+    }
 
     protected void init() {
         toolbar = findViewById(R.id.toolbar);

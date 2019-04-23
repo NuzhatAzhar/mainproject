@@ -89,7 +89,7 @@ public class Student_Signup extends AppCompatActivity {
                 }
                 if(!check){
                     dialog.show();
-                    signupUser(user,pass,email);
+                    signupUser(pass,user,email);
                 }
 
 
@@ -127,14 +127,14 @@ public class Student_Signup extends AppCompatActivity {
     }
 */
 
-    private void signupUser(   final String user, final String pass, final String email) {
+    private void signupUser(   final String pass, final String user, final String email) {
         auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     firebaseUser=auth.getCurrentUser();
 
-                 Datasave(user,pass,email,firebaseUser.getUid());
+                 Datasave(pass,user,email,firebaseUser.getUid());
 
 
                 }
@@ -146,7 +146,7 @@ public class Student_Signup extends AppCompatActivity {
         });
     }
 
-    private void Datasave(String user, String pass, String email, String uid) {
+    private void Datasave(String pass, String user, String email, String uid) {
         Student_list student_list=new Student_list(user,pass,email,uid);
         reference.child(uid).setValue(student_list).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

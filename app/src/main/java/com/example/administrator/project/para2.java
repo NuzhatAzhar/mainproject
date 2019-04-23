@@ -4,11 +4,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toolbar;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,15 +18,17 @@ public class para2 extends AppCompatActivity {
     ArrayList<String> imageUrls = new ArrayList<>();
     ImageView imageView;
     Toolbar toolbar;
+    ViewPager viewPager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_para2);
-        ViewPager viewPager=findViewById(R.id.viewpager2);
-        toolbar=findViewById(R.id.tab2);
-        imageView=findViewById(R.id.imag2);
+
+        viewPager=findViewById(R.id.viewpager2);
+
+
         add();
         AdapterPicasso adapter=new AdapterPicasso(this,imageUrls);
         viewPager.setAdapter(adapter);
@@ -109,7 +112,7 @@ public class para2 extends AppCompatActivity {
 
     public void zoomin(View view) {
         Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoomin);
-        view.startAnimation(animZoomIn);
+        viewPager.startAnimation(animZoomIn);
     }
 
 
@@ -117,7 +120,7 @@ public class para2 extends AppCompatActivity {
 
     public void zoomout(View view) {
         Animation animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoomout);
-        view.startAnimation(animZoomOut);
+        viewPager.startAnimation(animZoomOut);
 
     }
 }

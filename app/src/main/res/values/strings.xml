@@ -7,13 +7,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-<string name="country_name">Spinner Example</string>
+    <string name="country_name">Spinner Example</string>
 
-<string-array name="numbers">
-    <item>Pakistan</item>
-    <item>Uae</item>
-    <item>London</item>
-    <item>Qatar</item>
-    <item>Suadia Arab</item>
-</string-array>
+    <string-array name="numbers">
+        <item>Pakistan</item>
+        <item>Uae</item>
+        <item>London</item>
+        <item>Qatar</item>
+        <item>Suadia Arab</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>

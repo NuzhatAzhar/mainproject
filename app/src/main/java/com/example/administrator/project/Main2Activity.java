@@ -43,7 +43,7 @@ public class Main2Activity extends AppCompatActivity {
         tabs.getTabAt(0).setIcon(R.drawable.ic_import_contacts);
 
         tabs.getTabAt(1).setIcon(R.drawable.ic_wb_iridescent);
-        tabs.getTabAt(2).setIcon(R.drawable.ic_streetview);
+        tabs.getTabAt(2).setIcon(R.drawable.ic_location);
 
      /*   btn1.setOnClickListener(new View.OnClickListener() {
             @Override

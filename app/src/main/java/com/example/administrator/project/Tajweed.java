@@ -18,6 +18,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 /**
@@ -26,6 +29,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Tajweed extends Fragment {
     Button btn_tajweed,btn_tfseer,btn_online;
     FirebaseAuth auth;
+    FirebaseUser user;
+
+
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
 
     public Tajweed() {
@@ -37,6 +45,9 @@ public class Tajweed extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         auth=FirebaseAuth.getInstance();
+        database=FirebaseDatabase.getInstance();
+        reference=database.getReference("Current Student");
+        user=auth.getCurrentUser();
 
 
         final View view= inflater.inflate(R.layout.fragment_tajweed, container, false);
@@ -59,10 +70,13 @@ public class Tajweed extends Fragment {
                startActivity(intent);
            }
        });
-        Button alert=view.findViewById(R.id.btn_online1);
+        final Button alert=view.findViewById(R.id.btn_online1);
      alert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (user != null) {
+                    alert.setText("Detail");
+                }
                 Intent intent = new Intent(getContext(), Login.class);
                 startActivity(intent);
 

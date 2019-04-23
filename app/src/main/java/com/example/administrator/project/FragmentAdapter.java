@@ -35,7 +35,7 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return "Learned";
             case 2:
-                return "NewEvents";
+                return "Our Venue";
                 default:
                     return "";
         }

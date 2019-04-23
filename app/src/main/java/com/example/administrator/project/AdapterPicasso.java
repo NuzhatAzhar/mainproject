@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.jsibbold.zoomage.ZoomageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -33,14 +34,15 @@ public class AdapterPicasso extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        ImageView imageView=new ImageView(context);
+        ZoomageView zoomageView=new ZoomageView(context);
+        //ImageView imageView=new ImageView(context);
 
         Picasso.with(context)
                 .load(Imageurls.get(position))
                 .fit()
-                .into(imageView);
-        container.addView(imageView);
-        return imageView;
+                .into(zoomageView);
+        container.addView(zoomageView);
+        return zoomageView;
 
     }
 

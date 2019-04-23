@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tafseercourse"
+    android:background="@drawable/taf">
+
+
+    <Button
+        android:id="@+id/link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="532dp"
+        android:background="@color/transparent"
+        android:fontFamily="sans-serif"
+        android:onClick="fb"
+        android:text="  https://www.facebook.com/madarsaalfurqan"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="10sp" />
+
+    <Button
+        android:layout_width="90dp"
+
+        android:onClick="call"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/link"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp"
+        android:layout_marginRight="17dp"
+        android:textAllCaps="false"
+        android:background="@color/transparent"
+        android:text="Contact Us" />
+
+
+</RelativeLayout>

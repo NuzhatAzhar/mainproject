@@ -1,14 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".New_Events">
+    tools:context=".New_Events"
+    android:background="#166861">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Get In Touch"
+        android:textColor="#FFEDEF8F"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/locat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="87dp"
+        android:src="@drawable/ic_location_on" />
+
+    <TextView
+        android:id="@+id/location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginLeft="97dp"
+        android:layout_marginTop="98dp"
+        android:text="Find us the Place"
+        android:textColor="#FFEDEF8F"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_text"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="97dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="-63dp"
+        android:text="Cambridge Mall ,2nd Floor,"
+        android:textColor="#FFEDEF8F"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_text"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="-63dp"
+        android:text="Near Saddar Cia center Krachi "
+        android:textColor="#FFEDEF8F"
+        android:textSize="16dp" />
+
+
+    <ImageView
+        android:id="@+id/call1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="273dp"
+        android:src="@drawable/ic_call_black_24dp" />
+
+    <TextView
+        android:id="@+id/call_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginLeft="101dp"
+        android:layout_marginTop="281dp"
+        android:text="Give us a Ring"
+        android:textColor="#FFEDEF8F"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_text"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="109dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginBottom="-63dp"
+        android:text="Monday - Friday:"
+        android:textColor="#FFEDEF8F"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_text"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="219dp"
+        android:layout_marginBottom="-63dp"
+        android:text="1pm-4pm"
+        android:textColor="#FFEDEF8F"
+        android:textSize="16dp" />
+</RelativeLayout>

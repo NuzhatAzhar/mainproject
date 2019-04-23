@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         init();
         if (user != null) {
-            startActivity(new Intent(Login.this,Course_list.class));
+            startActivity(new Intent(Login.this,BaseActivity.class));
         }
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override

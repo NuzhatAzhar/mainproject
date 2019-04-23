@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     tools:context=".Login"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:background="@drawable/loginform"
+    android:id="@+id/id1">
+<!--
     <ImageView
         android:layout_width="200dp"
         android:layout_height="150dp"
@@ -79,45 +80,76 @@
             android:textSize="15sp" />
 
     </RelativeLayout>
+    -->
+    <EditText
+        android:id="@+id/login_email"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imgView_emailIcon"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="282dp"
+        android:layout_toRightOf="@+id/imgView_emailIcon"
+        android:hint="Email"
 
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/login_pass"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imgView_passwordIcon"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="121dp"
+        android:layout_marginTop="361dp"
+        android:layout_toRightOf="@+id/imgView_passwordIcon"
+        android:hint="Password"
+        android:inputType="textPassword"
+
+        android:textSize="15sp" />
     <CheckBox
         android:id="@+id/chkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/relativeLayout4"
-        android:layout_gravity="left"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="104dp"
+
+        android:layout_marginBottom="123dp"
+        android:buttonTint="#f3f4f4"
         android:fontFamily="sans-serif"
         android:text="Remeber Me"
-        android:textColor="#115f59"
-        android:buttonTint="#115f59"
-        />
+        android:textColor="#ebecec" />
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="220dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="#115f59"
+        android:layout_alignLeft="@+id/login_signup_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-115dp"
+        android:layout_marginBottom="60dp"
+        android:background="#ecee8e"
         android:text="Login"
-        android:textColor="#ffffff"
+        android:textColor="#0e0e0e"
         android:textSize="20sp"
         android:textStyle="bold" />
 
 
-
-
     <Button
-        android:onClick="signin"
         android:id="@+id/login_signup_btn"
-        android:layout_width="220dp"
-        android:layout_gravity="center"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="82dp"
+        android:layout_marginBottom="59dp"
+        android:background="#ecee8e"
+        android:onClick="signin"
         android:text="Sign in"
-        android:textSize="20sp"
-        android:background="#115f59"
-        android:layout_marginTop="20dp"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="20dp"/>
-</LinearLayout>
+        android:textColor="#030303"
+        android:textSize="20sp" />
+</RelativeLayout>

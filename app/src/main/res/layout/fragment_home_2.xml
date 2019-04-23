@@ -27,48 +27,54 @@
         android:layout_marginBottom="20dp"
         android:text="This new program is being offered by AL-FURQAN Institute of
 Islamic Education  foundation that will provide one-on-one online Quran classes for all age groups throughout the world.We have qualified instructors and we will use the latest state of the art technology for these classes."
-        android:textColor="#1e9c46"
+        android:textColor="#115f59"
         android:textSize="12dp"
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/BasicRecitation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="37dp"
+        android:layout_marginRight="60dp"
+        android:backgroundTint="#115f59"
+        android:text="Register"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/ReadTajweed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginTop="30dp"
         android:layout_marginRight="60dp"
-        android:backgroundTint="#FF008577"
+        android:backgroundTint="#115f59"
         android:text="Register"
         android:textColor="#ffffff" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="60dp"
-        android:backgroundTint="#FF008577"
-        android:text="Register"
-        android:textColor="#ffffff" />
-
-    <Button
+        android:id="@+id/QuranMemorization"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginTop="20dp"
         android:layout_marginRight="60dp"
-        android:backgroundTint="#FF008577"
+        android:backgroundTint="#115f59"
         android:text="Register"
         android:textColor="#ffffff" />
 
     <Button
+        android:id="@+id/QuranTranslation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="60dp"
-        android:backgroundTint="#FF008577"
+        android:backgroundTint="#115f59"
         android:text="Register"
         android:textColor="#ffffff" />
+
+
 
 </LinearLayout>

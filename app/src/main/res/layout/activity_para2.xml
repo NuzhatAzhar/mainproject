@@ -5,38 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".para2">
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#115f59"
-        android:id="@+id/tab2">
-        <ImageView
-            android:id="@+id/imag2"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="6dp"
-            android:onClick="zoomin"
-            android:layout_marginEnd="75dp"
-            android:layout_marginRight="75dp"
-            android:src="@drawable/ic_zoom_in" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:onClick="zoomout"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="-20dp"
-            android:src="@drawable/ic_zoom_out" />
-
-
-    </android.support.v7.widget.Toolbar>
 
        <android.support.v4.view.ViewPager
         android:id="@+id/viewpager2"
