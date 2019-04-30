@@ -1,5 +1,7 @@
 package com.example.administrator.project;
 
+import android.app.ProgressDialog;
+import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +13,24 @@ import java.util.Collections;
 
 public class para3 extends AppCompatActivity {
     private ArrayList imageUrls = new  ArrayList<>();
+    ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_para3);
+        dialog = new ProgressDialog(para3.this);
+        dialog.setTitle("Uploading");
+        dialog.setMessage("Please Wait...");
+        dialog.show();
+        Handler handler=new Handler();
+
+        Runnable runnable=new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+            }
+        };
+        handler.postDelayed(runnable,3000);
         ViewPager viewPager=findViewById(R.id.viewpager3);
         add();
         AdapterPicasso adapterPicasso=new AdapterPicasso(this,imageUrls);

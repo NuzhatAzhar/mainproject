@@ -1,6 +1,7 @@
 package com.example.administrator.project;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.Button;
  */
 public class Learn extends Fragment {
     Button bpara1, bpara2, bpara3, bpara4;
+    ProgressDialog dialog;
 
     public Learn() {
         // Required empty public constructor
@@ -30,28 +32,36 @@ public class Learn extends Fragment {
         bpara2 = view.findViewById(R.id.para2);
         bpara3 = view.findViewById(R.id.para3);
         bpara4 = view.findViewById(R.id.para4);
+
         bpara1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(),para1.class));
+
+
+
             }
         });
         bpara2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(),para2.class));
+
+
             }
         });
         bpara3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(),para3.class));
+
             }
         });
         bpara4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(),para4.class));
+
             }
         });
 

@@ -1,23 +1,44 @@
 package com.example.administrator.project;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class para1 extends AppCompatActivity {
     ArrayList<String> imageUrls = new ArrayList<>();
     ImageView imageView;
     ViewPager viewPager;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_para1);
+        dialog = new ProgressDialog(para1.this);
+        dialog.setTitle("Uploading");
+        dialog.setMessage("Please Wait...");
+        dialog.show();
+        Handler handler=new Handler();
+
+        Runnable runnable=new Runnable() {
+            @Override
+            public void run() {
+            dialog.dismiss();
+            }
+        };
+        handler.postDelayed(runnable,3000);
         viewPager = findViewById(R.id.viewpager1);
         add();
+        AdapterPicasso adapter=new AdapterPicasso(this,imageUrls);
+        viewPager.setAdapter(adapter);
+        Collections.reverse(imageUrls);
+        viewPager.setCurrentItem(imageUrls.size()-1);
 
     }
 
@@ -159,7 +180,7 @@ public class para1 extends AppCompatActivity {
         //68
         imageUrls.add("https://firebasestorage.googleapis.com/v0/b/test-69cd9.appspot.com/o/Para1%2Fpage68.jpg?alt=media&token=fc0b0565-a176-4ffa-9381-ee68ddd38964");
         //69
-        imageUrls.add("https://firebasestorage.googleapis.com/v0/b/test-69cd9.appspot.com/o/Para1%2Fpage69.jpg?alt=media&token=65edded8-baf1-4a23-a2ad-2bda929b18f9");
+        imageUrls.add("https://firebasestorage.googleapis.com/v0/b/test-69cd9.appspot.com/o/Para1%2Fpage69(EFER).jpg?alt=media&token=b365c91b-fe60-4bcb-b6d9-518b740f2734 ");
 
 
     }

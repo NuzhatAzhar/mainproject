@@ -64,7 +64,7 @@ public class BaseActivity extends AppCompatActivity {
 
         init();
         transaction=fragmentManager.beginTransaction();
-        transaction.replace(R.id.frag_container,new Home_Fragment());
+        transaction.replace(R.id.frag_container,new Home_Fragment()).addToBackStack( "tag" );
         transaction.commit();
 
         setUpDrawer();
@@ -90,6 +90,7 @@ public class BaseActivity extends AppCompatActivity {
                         builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                auth.signOut();
                            startActivity(new Intent(BaseActivity.this,Main2Activity.class));
                            }
                         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -151,8 +152,31 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+
         startActivity(new Intent(BaseActivity.this,Main2Activity.class));
-    }
+finish();
+        }
+
+
+        //startActivity(new Intent(BaseActivity.this,Main2Activity.class));
+        /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("warning");
+        builder.setIcon(R.mipmap.ic_launcher_round);
+        builder.setMessage("Are you sure you want to exit");
+        builder.setCancelable(false);
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+          System.exit(0);
+          finish();
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        }).show();*/
+
 
     protected void init() {
         toolbar = findViewById(R.id.toolbar);

@@ -60,8 +60,9 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    public void onBackPressed(){
+        super.onBackPressed();
+        /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("warning");
         builder.setIcon(R.mipmap.ic_launcher_round);
         builder.setMessage("Are you sure you want to exit");
@@ -70,13 +71,14 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 System.exit(0);
+                finish();
             }
         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
-        }).show();
+        }).show();*/
 
     }
 

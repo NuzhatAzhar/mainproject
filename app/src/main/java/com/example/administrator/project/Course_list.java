@@ -1,5 +1,6 @@
 package com.example.administrator.project;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,10 @@ import android.widget.Button;
 
 public class Course_list extends BaseActivity  {
     Button btn1,btn2,btn3,btn4;
+    ProgressDialog dialog;
+    boolean check=false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +26,9 @@ public class Course_list extends BaseActivity  {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Course_list.this,CourseRegistrerd.class));
+                dialog = new ProgressDialog(Course_list.this);
+                dialog.setTitle("Uploading");
+                dialog.setMessage("Please Wait...");
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +49,10 @@ public class Course_list extends BaseActivity  {
                 startActivity(new Intent(Course_list.this,CourseRegistrerd.class));
             }
         });
+        if(!check){
+            dialog.show();
+
+        }
 
         }
 

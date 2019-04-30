@@ -12,9 +12,9 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         app:tabBackground="@color/colorPrimary"
         app:tabInlineLabel="true"
+        app:tabTextColor="#f5f5f5"
         app:tabIndicatorColor="@android:color/white"
         app:tabMode="scrollable">
 

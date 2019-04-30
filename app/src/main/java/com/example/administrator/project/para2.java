@@ -1,5 +1,7 @@
 package com.example.administrator.project;
 
+import android.app.ProgressDialog;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -19,12 +21,26 @@ public class para2 extends AppCompatActivity {
     ImageView imageView;
     Toolbar toolbar;
     ViewPager viewPager;
+    ProgressDialog dialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_para2);
+        dialog = new ProgressDialog(para2.this);
+        dialog.setTitle("Uploading");
+        dialog.setMessage("Please Wait...");
+        dialog.show();
+        Handler handler=new Handler();
+
+        Runnable runnable=new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+            }
+        };
+        handler.postDelayed(runnable,3000);
 
         viewPager=findViewById(R.id.viewpager2);
 

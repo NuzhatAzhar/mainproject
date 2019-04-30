@@ -4,31 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".New_Events"
-    android:background="#166861">
+    android:background="@drawable/contactback">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="100dp"
         android:text="Get In Touch"
-        android:textColor="#FFEDEF8F"
-        android:textStyle="bold"
-        android:textSize="30dp"/>
-
+        android:textColor="#115f59"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+-->
     <ImageView
+
         android:id="@+id/locat"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="87dp"
-        android:src="@drawable/ic_location_on" />
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/lo" />
 
-    <TextView
+
+    <ImageView
+        android:id="@+id/call1"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="260dp"
+        android:src="@drawable/contattt" />
+
+    <ImageView
+        android:id="@+id/Facebook"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="365dp"
+        android:src="@drawable/facebok" />
+
+    <!--<TextView
         android:id="@+id/location_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -115,5 +138,5 @@
         android:layout_marginBottom="-63dp"
         android:text="1pm-4pm"
         android:textColor="#FFEDEF8F"
-        android:textSize="16dp" />
+        android:textSize="16dp" />-->
 </RelativeLayout>

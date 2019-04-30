@@ -9,7 +9,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -37,7 +37,7 @@ public class Student_Signup extends AppCompatActivity {
     DatabaseReference reference;
     ProgressDialog dialog;
     boolean check=false;
-    Snackbar snackbar;
+
     String emailPattern="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,12 +152,13 @@ public class Student_Signup extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
+                    startActivity(new Intent(Student_Signup.this,BaseActivity.class));
                     Toast.makeText(Student_Signup.this, "added", Toast.LENGTH_SHORT).show();
                 }
                 else Toast.makeText(Student_Signup.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
             }
         });
-        startActivity(new Intent(Student_Signup.this,BaseActivity.class));
+
     }
 
     private void saveData() {
